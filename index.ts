@@ -15,7 +15,7 @@ let employees: [number, string][] = [[2,"dave"], [3, "charles"]]
 // OBJECTS
 let car :{ brand: string,year: number} = {brand: "Toyota", year: 2017}
 // custom type
-tyoe Car = {
+type Car = {
     brand: string,
     year: number
 }
@@ -36,7 +36,7 @@ let newCar: Car1 = {
 }
 
 // UNION
-let x: string | number = true
+let x: string | number = 3
 
 // example
 type occupation = "employed" | "student"
@@ -48,7 +48,7 @@ y = <number> 22
 
 // FUNCTIONS
 function add(x: number, y: number): number {
-    return x + yield
+    return x + y
 }
 
 add(2,2)
@@ -63,5 +63,25 @@ function sayHi(): void {
 
 // ENUMS
 enum EyeColor {
-    brown = "Common eye color", blue = "rare eye color", green = "VEry rare eye color"
+    brown = "Common eye color", blue = "rare eye color", green = "Very rare eye color"
 }
+
+interface Student{
+    name: string,
+    age: number,
+    eyeColor: EyeColor
+}
+
+function displayStudent(student: Student): void {
+    const info: string =
+  student.name + "\n" + student.age + "\n" + student.eyeColor;
+    document.body.style.whiteSpace = "pre-line";
+    document.body.innerText = info;
+}
+
+displayStudent({
+    name: "Ryan",
+    age: 37,
+    eyeColor: EyeColor.blue
+})
+
